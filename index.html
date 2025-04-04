@@ -21,10 +21,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
-    header h1 {
-      font-size: 2rem;
-      font-weight: 700;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
     nav {
       display: flex;
@@ -78,11 +87,36 @@
       padding: 2rem;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        color: white;
+      }
+      nav {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+      nav.active {
+        display: flex;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Y.C.& Friends</h1>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Y.C.& Friends Logo">
+    </div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
     <nav>
       <a href="#best">Best Sellers</a>
       <a href="#accessories">Accessories</a>
