@@ -36,6 +36,9 @@
     }
     .logo img {
       height: 40px;
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
     }
     .menu-toggle {
       font-size: 1.5rem;
@@ -82,6 +85,9 @@
       height: auto;
       display: block;
       margin: 0 auto;
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
     }
     .hero h2 {
       font-size: 2.5rem;
@@ -126,6 +132,9 @@
     .quick-links img {
       width: 40px;
       margin-bottom: 0.5rem;
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
     }
     .quick-links p {
       color: #fff;
@@ -204,7 +213,27 @@
         link.addEventListener('click', () => {
           document.querySelector('nav').classList.remove('active');
         });
+
+        // 替换图片标签为JS加载形式
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(img => {
+          const src = img.getAttribute('src');
+          const alt = img.getAttribute('alt');
+          const wrapper = document.createElement('span');
+          const newImg = new Image();
+          newImg.src = src;
+          newImg.alt = alt;
+          newImg.style.pointerEvents = 'none';
+          newImg.setAttribute('draggable', 'false');
+          img.replaceWith(wrapper);
+          wrapper.appendChild(newImg);
+        });
       });
+    });
+
+    // 禁止右键菜单
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
     });
   </script>
 </head>
