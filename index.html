@@ -15,6 +15,7 @@
       font-family: 'Quicksand', sans-serif;
       background: linear-gradient(180deg, #7a4fd4, #ff9966);
       color: #fff;
+      transition: background 0.5s ease-in-out;
     }
     header {
       padding: 1.5rem 2rem;
@@ -22,11 +23,18 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      animation: fadeDown 1s ease-in-out;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
     }
     .menu-toggle {
       font-size: 1.5rem;
@@ -41,14 +49,38 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     .hero {
       text-align: center;
-      padding: 4rem 2rem 2rem 2rem;
+      padding: 0 0 2rem 0;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero img {
+      width: 100%;
+      max-width: 100%;
+      display: block;
     }
     .hero h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin: 1.5rem 0 1rem;
     }
     .hero button {
       background: #fff;
@@ -59,7 +91,41 @@
       font-weight: bold;
       border-radius: 25px;
       cursor: pointer;
+      transition: all 0.3s ease;
       margin-bottom: 2rem;
+    }
+    .hero button:hover {
+      background: #ff6f61;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      background-color: #1c1c1e;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .quick-links .link-box {
+      background-color: #2c2c30;
+      border-radius: 10px;
+      padding: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .quick-links .link-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .quick-links img {
+      width: 40px;
+      margin-bottom: 0.5rem;
+    }
+    .quick-links p {
+      color: #fff;
+      font-size: 1rem;
+      margin: 0;
     }
     .sections {
       background: #fff;
@@ -74,6 +140,11 @@
       padding: 2rem;
       border-radius: 15px;
       text-align: center;
+      transition: all 0.3s ease;
+    }
+    .section-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .section-box h3 {
       margin-bottom: 1rem;
@@ -86,7 +157,6 @@
       padding: 2rem;
       font-size: 0.9rem;
     }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -109,7 +179,9 @@
 <body>
   <header>
     <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-      <div class="logo">Y.C.& Friends</div>
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Y.C.& Friends Logo">
+      </div>
       <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
     </div>
     <nav>
@@ -121,8 +193,28 @@
   </header>
 
   <section class="hero">
-    <h2>Explore Our World of Characters</h2>
+    <img src="assets/images/banner-tiger.png" alt="Y.C. Bear Banner">
+    <h2>NEW ARRIVALS</h2>
     <button>SHOP NOW</button>
+  </section>
+
+  <section class="quick-links">
+    <div class="link-box">
+      <img src="assets/images/icon-tshirt.png" alt="Best Sellers">
+      <p>Best Sellers</p>
+    </div>
+    <div class="link-box">
+      <img src="assets/images/icon-tiger.png" alt="About Y.C. the Tiger">
+      <p>About Y.C.</p>
+    </div>
+    <div class="link-box">
+      <img src="assets/images/icon-cap.png" alt="Accessories">
+      <p>Accessories</p>
+    </div>
+    <div class="link-box">
+      <img src="assets/images/icon-story.png" alt="Our Story">
+      <p>Our Story</p>
+    </div>
   </section>
 
   <section class="sections">
