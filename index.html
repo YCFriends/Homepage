@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Y.C.& Friends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(180deg, #7a4fd4, #ff9966);
+      color: #fff;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      background: #fff;
+      color: #ff6f61;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .sections {
+      background: #fff;
+      color: #333;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .section-box {
+      background: #f8f8f8;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .section-box h3 {
+      margin-bottom: 1rem;
+      color: #7a4fd4;
+    }
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Y.C.& Friends</h1>
+    <nav>
+      <a href="#best">Best Sellers</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Explore Our World of Characters</h2>
+    <button>SHOP NOW</button>
+  </section>
+
+  <section class="sections">
+    <div class="section-box" id="best">
+      <h3>Best Sellers</h3>
+      <p>Discover our most loved plushies and apparel!</p>
+    </div>
+    <div class="section-box" id="accessories">
+      <h3>Accessories</h3>
+      <p>Get the cutest bags, pins, and more to match your favorite friend!</p>
+    </div>
+    <div class="section-box" id="story">
+      <h3>Our Story</h3>
+      <p>From a child's imagination to a world of lovable characters.</p>
+    </div>
+    <div class="section-box" id="contact">
+      <h3>Contact Us</h3>
+      <p>Reach out at hello@ycandfriends.com or follow us @yc.and.friends</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Y.C.& Friends. All rights reserved.
+  </footer>
+</body>
+</html>
